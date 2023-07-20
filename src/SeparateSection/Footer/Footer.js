@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <footer className="footer p-10 bg-base-200 text-base-content">
             <div>
-                <img draggable='true' src={logo} alt="" className='w-20 rounded-full md:mx-auto'/>
+                <img draggable='true' src={logo} alt="" className='w-20 rounded-full'/>
                 <p className='text-justify'>CarFusionCenter Ltd.<br />Providing reliable tech since 1992</p>
             </div>
             <div>

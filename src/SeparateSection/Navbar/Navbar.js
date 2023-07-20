@@ -5,9 +5,9 @@ import logo from '../../images/CarFusionCenter-logo.png'
 const Navbar = () => {
 
     const items = <>
-    <li><Link className='font-bold text-lg'>Home</Link></li>
-    <li><Link className='font-bold text-lg'>Abouts</Link></li>
-    <li><Link className='font-bold text-lg'>Products</Link></li>
+    <li><Link to={'/'} className='font-bold text-lg'>Home</Link></li>
+    <li><Link to={'/about'} className='font-bold text-lg'>Abouts</Link></li>
+    <li><Link to={'/products'} className='font-bold text-lg'>Products</Link></li>
     <li><Link className='font-bold text-lg'>Your Products</Link></li>
 
 
@@ -15,7 +15,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="navbar bg-base-100 lg:w-11/12 lg:mx-auto">
+            <div className="navbar bg-base-100 lg:w-11/12 lg:mx-auto ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -36,7 +36,7 @@ const Navbar = () => {
                     <Link className="btn btn-neutral text-white md:font-bold">+AddProducts</Link>
                 </div>
                 <div className="ms-4">
-                    <Link className="btn btn-outline btn-neutral">Login</Link>
+                    <Link to={'/login'} className="btn btn-outline btn-neutral">Login</Link>
                 </div>
             </div>
         </div>
