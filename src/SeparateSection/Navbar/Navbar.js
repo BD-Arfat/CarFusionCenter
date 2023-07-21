@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../images/CarFusionCenter-logo.png'
+import { AuthContext } from '../../Components/Context/AuthContextProvider';
 
 const Navbar = () => {
 
@@ -9,9 +10,16 @@ const Navbar = () => {
     <li><Link to={'/about'} className='font-bold text-lg'>Abouts</Link></li>
     <li><Link to={'/products'} className='font-bold text-lg'>Products</Link></li>
     <li><Link className='font-bold text-lg'>Your Products</Link></li>
-
-
     </>
+    const { user, logout } = useContext(AuthContext);
+
+    const handelLogout = () => {
+        logout()
+            .then(() => { })
+            .catch(error => {
+                
+            })
+    }
 
     return (
         <div>
@@ -35,9 +43,13 @@ const Navbar = () => {
                 <div className="navbar-end">
                     <Link className="btn btn-neutral text-white md:font-bold">+AddProducts</Link>
                 </div>
-                <div className="ms-4">
+                {
+                    user?.email ? <div onClick={handelLogout} className="ms-4">
+                    <Link  to={'/login'} className="btn btn-outline btn-neutral">LogOut</Link>
+                </div> : <div className="ms-4">
                     <Link to={'/login'} className="btn btn-outline btn-neutral">Login</Link>
                 </div>
+                }
             </div>
         </div>
     );

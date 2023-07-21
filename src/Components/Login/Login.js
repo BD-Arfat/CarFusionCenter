@@ -1,19 +1,44 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthContextProvider';
+import { toast } from 'react-hot-toast';
 
 const Login = () => {
+
+    const {loginUser} = useContext(AuthContext);
+    const naveigate = useNavigate()
+
+    const handleSubmit = e =>{
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+       
+        loginUser(email, password)
+        .then(res =>{
+            const user = res.user;
+            console.log(user)
+            toast.success('successfull you Login !!!!!!!!')
+            form.reset();
+            naveigate('/')
+        })
+        .catch(error => {
+            toast.error(error.massage)
+        })
+    }
+
     return (
         <div>
             <div className="flex flex-col items-center md:my-28 pt-6 sm:justify-center sm:pt-0">
                 <div>
                     <a href="/">
                         <h3 className="text-4xl font-bold text-purple-600">
-                            Logo
+                            Login now
                         </h3>
                     </a>
                 </div>
                 <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg">
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         
                         <div className="mt-4">
                             <label

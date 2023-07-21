@@ -5,6 +5,7 @@ import Abouts from "../Components/Pages/Abouts/Abouts";
 import Products from "../Components/Pages/Products/Products";
 import Register from "../Components/Register/Register";
 import Login from "../Components/Login/Login";
+import PrivetRouter from "../Components/PrivetRout/PrivetRouter";
 
 export const router = createBrowserRouter([
     {
@@ -21,7 +22,7 @@ export const router = createBrowserRouter([
             },
             {
                 path : '/products',
-                element : <Products/>
+                element : <PrivetRouter><Products/></PrivetRouter>
             },
             {
                 path : '/register',
