@@ -3,7 +3,7 @@ import Tag from './Tag';
 
 const Tags = () => {
     return (
-        <div className='flex gap-5'>
+        <div className=''>
             <Tag/>
         </div>
     );
