@@ -5,28 +5,47 @@ import { toast } from 'react-hot-toast';
 
 const Register = () => {
     const naveigate = useNavigate()
-    const {createUser} = useContext(AuthContext)
+    const { createUser } = useContext(AuthContext)
 
-    const handleRegister = (e) =>{
+    const handleRegister = (e) => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
         const image = form.image.value;
         const password = form.password.value;
-       
+
+        const data = {
+            name,
+            email,
+            password,
+            image
+        }
+
         createUser(email, password)
-        .then(res =>{
-            const user = res.user;
-            console.log(user)
-            toast.success('successfull you Register !!!!!!!!')
-            form.reset();
-            naveigate('/')
-        })
-        .catch(error => {
-            toast.error(error.massage)
-            console.error(error)
-        })
+            .then(res => {
+                const user = res.user;
+                console.log(user)
+                
+                form.reset();
+                fetch("http://localhost:5000/users", {
+                    method: "POST", // or 'PUT'
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                })
+                .then(res => res.json())
+                .then(data =>{
+                    console.log(data);
+                    toast.success('successfull you Register !!!!!!!!')
+                    naveigate('/')
+                })
+            })
+            .catch(error => {
+                toast.error(error.massage)
+                console.error(error)
+            })
     }
 
     return (
@@ -51,7 +70,7 @@ const Register = () => {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
-                                required
+                                    required
                                     type="text"
                                     name="name"
                                     className="block w-full mt-1  rounded-md shadow-sm border p-4 border-black"
@@ -67,7 +86,7 @@ const Register = () => {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
-                                required
+                                    required
                                     type="email"
                                     name='email'
                                     className="block w-full mt-1  rounded-md shadow-sm border p-4 border-black"
@@ -83,7 +102,7 @@ const Register = () => {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
-                                required
+                                    required
                                     type="url"
                                     name="image"
                                     className="block w-full mt-1 border border-black rounded-md p-4"
@@ -99,7 +118,7 @@ const Register = () => {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
-                                required
+                                    required
                                     type="password"
                                     name="password"
                                     className="block w-full mt-1 border border-black rounded-md p-4"
