@@ -10,13 +10,14 @@ const Navbar = () => {
         <li><Link to={'/'} className='font-bold text-lg'>Home</Link></li>
         <li><Link to={'/about'} className='font-bold text-lg'>Abouts</Link></li>
         <li><Link to={'/products'} className='font-bold text-lg'>Products</Link></li>
-        <li><Link className='font-bold text-lg'>Your Products</Link></li>
+        <li><Link to={'/order'} className='font-bold text-lg'>Your order</Link></li>
+        <li><Link to={'/yourProducts'} className='font-bold text-lg'>Your Products</Link></li>
     </>
     const { user, logout } = useContext(AuthContext);
-    const url = `http://localhost:5000/user?email=${user?.email}`;
+    const url = `https://car-shops-server.vercel.app/user?email=${user?.email}`;
 
-    const { data: orders = [] } = useQuery({
-        queryKey: ['orders', user?.email],
+    const { data: users = [] } = useQuery({
+        queryKey: ['users', user?.email],
         queryFn: async () => {
             const res = await fetch(url, {
 
@@ -56,15 +57,15 @@ const Navbar = () => {
 
 
                 <div className="navbar-end">
-                    <Link className="btn btn-neutral text-white md:font-bold">+AddProducts</Link>
+                    <Link to={'/addProducts'} className="btn btn-neutral text-white md:font-bold">+AddProducts</Link>
                 </div>
 
                 <div className="ms-3">
                     {
-                        orders?.map(order => <div className="avatar">
-                            <abbr title={order.name}>
+                        users?.map(user => <div key={user._id} className="avatar">
+                            <abbr title={user.name}>
                                 <div className="w-10 rounded-full cursor-pointer">
-                                    <img src={order.image} alt='' />
+                                    <img src={user.image} alt='' />
                                 </div>
                             </abbr>
 

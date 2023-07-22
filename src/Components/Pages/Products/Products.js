@@ -44,7 +44,7 @@ const Products = () => {
     return (
         <div>
 
-            <div className='grid mt-10 gap-5 md:w-11/12 md:mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-16'>
+            <div className='grid mt-20 gap-5 md:w-11/12 md:mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-16'>
                 {content}
             </div>
         </div>

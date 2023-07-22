@@ -28,7 +28,7 @@ const Register = () => {
                 console.log(user)
                 
                 form.reset();
-                fetch("http://localhost:5000/users", {
+                fetch("https://car-shops-server.vercel.app/users", {
                     method: "POST", // or 'PUT'
                     headers: {
                         "Content-Type": "application/json",
