@@ -76,7 +76,7 @@ const Navbar = () => {
         }
     </>
 
-
+        // start navbar
     return (
         <div className='bg-white md:overflow-hidden fixed top-0 left-0 right-0 shadow-2xl z-50'>
             <div className="navbar lg:w-11/12 lg:mx-auto">
@@ -126,6 +126,7 @@ const Navbar = () => {
             </div>
         </div>
     );
+    // end navbar
 };
 
 export default Navbar;
