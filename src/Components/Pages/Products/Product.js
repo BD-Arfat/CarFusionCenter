@@ -28,7 +28,6 @@ const Product = ({ items }) => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             toast.success('successfull your Order');
             navigate('/order')
         })

@@ -11,7 +11,7 @@ const MyOrder = () => {
     const url = `https://car-shops-server.vercel.app/order?email=${user?.email}`
 
     const { data: orders = [], refetch } = useQuery({
-        queryKey: ['orders', user?.email],
+        queryKey: ['order', user?.email],
         queryFn: async () => {
             const res = await fetch(url, {
 
