@@ -32,7 +32,7 @@ const Product = ({ items }) => {
             navigate('/order')
         })
     }
-
+// end
     return (
 
         <div className="card w-[300px] mx-auto md:w-[280px] h-[380px] bg-base-100 border-2 hover:scale-110 transform transition duration-700 border-blue-700 shadow-xl">
