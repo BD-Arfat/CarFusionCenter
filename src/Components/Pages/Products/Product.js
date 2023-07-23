@@ -34,7 +34,7 @@ const Product = ({ items }) => {
     }
 
     return (
-
+        // start product
         <div className="card w-[300px] mx-auto md:w-[280px] h-[380px] bg-base-100 border-2 hover:scale-110 transform transition duration-700 border-blue-700 shadow-xl">
             <div className="card-body">
                 <img src={items.image} className='h-[150px]' alt="" />
@@ -44,6 +44,7 @@ const Product = ({ items }) => {
                 <button onClick={handleadd} className='w-full btn-sm btn btn-info mt-2'>Order now</button>
             </div>
         </div>
+        // end product
     );
 };
 
