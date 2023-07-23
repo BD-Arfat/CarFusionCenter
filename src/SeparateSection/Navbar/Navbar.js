@@ -44,7 +44,7 @@ const Navbar = () => {
             .then(() => { })
             .catch(error => { })
     }
-
+    // start items
     const items = <>
         <li><Link to={'/'} className='font-bold text-lg'>Home</Link></li>
         <li><Link to={'/about'} className='font-bold text-lg'>Abouts</Link></li>
@@ -75,6 +75,7 @@ const Navbar = () => {
             </> : null
         }
     </>
+    // end items
 
         // start navbar
     return (
