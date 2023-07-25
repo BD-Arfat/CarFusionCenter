@@ -10,6 +10,9 @@ import MyOrders from "../Components/MyOrder/MyOrder";
 import AddProducts from "../Components/AddProducts/AddProducts";
 import YourProducts from "../Components/YourProducts/YourProducts";
 import UpdateProduct from "../Components/UpdateProduct/UpdateProduct";
+import SingleProduct from "../Components/SingleProduct/SingleProduct";
+import OrderSuccess from "../Components/OrderSuccess/OrderSuccess";
+import OrderError from "../Components/OrderError/OrderError";
 
 export const router = createBrowserRouter([
     {
@@ -48,7 +51,17 @@ export const router = createBrowserRouter([
             },{
                 path : '/product/:id',
                 element : <UpdateProduct/>,
-                loader : ({params}) => fetch(`https://car-shops-server.vercel.app/products/${params.id}`)
+                loader : ({params}) => fetch(`https://car-shops-server-bd-arfat.vercel.app/products/${params.id}`)
+            },{
+                path : '/products/:id',
+                element : <SingleProduct/>,
+                loader : ({params}) => fetch(`https://car-shops-server-bd-arfat.vercel.app/products/${params.id}`)
+            },{
+                path : '/order/success',
+                element : <OrderSuccess/>
+            },{
+                path : '/order/fail',
+                element : <OrderError/>
             }
         ]
     }

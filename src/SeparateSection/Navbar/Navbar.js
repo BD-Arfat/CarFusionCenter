@@ -13,8 +13,8 @@ const Navbar = () => {
     // 
 
     const { user, logout } = useContext(AuthContext);
-    const orderUrl = `https://car-shops-server.vercel.app/order?email=${user?.email}`
-    const productUrl = `https://car-shops-server.vercel.app/product?email=${user?.email}`
+    const orderUrl = `https://car-shops-server-bd-arfat.vercel.app/order?email=${user?.email}`
+    const productUrl = `https://car-shops-server-bd-arfat.vercel.app/product?email=${user?.email}`
 
     const { data: orders = [] } = useQuery({
         queryKey: ['order', user?.email],

@@ -9,7 +9,7 @@ const YourProducts = () => {
 
     const { user } = useContext(AuthContext)
 
-    const url = `https://car-shops-server.vercel.app/product?email=${user?.email}`
+    const url = `https://car-shops-server-bd-arfat.vercel.app/product?email=${user?.email}`
 
     const { data: products = [], refetch } = useQuery({
         queryKey: ['products', user?.email],
@@ -25,7 +25,7 @@ const YourProducts = () => {
     const hendelDelete = id =>{
         const proceeed = window.confirm(`Do you really want to delete this product?`);
         if(proceeed){
-            fetch(`https://car-shops-server.vercel.app/products/${id}`, {
+            fetch(`https://car-shops-server-bd-arfat.vercel.app/products/${id}`, {
                 method : 'DELETE'
             })
             .then(res=>res.json())

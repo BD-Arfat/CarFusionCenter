@@ -42,8 +42,8 @@ const Products = () => {
         .map(items => <Product key={items._id} items={items} />);
 
     return (
+        // products map
         <div>
-
             <div className='grid mt-20 gap-5 md:w-11/12 md:mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-16'>
                 {content}
             </div>

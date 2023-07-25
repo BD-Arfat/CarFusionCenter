@@ -8,7 +8,7 @@ const MyOrder = () => {
 
     const { user } = useContext(AuthContext)
 
-    const url = `https://car-shops-server.vercel.app/order?email=${user?.email}`
+    const url = `https://car-shops-server-bd-arfat.vercel.app/order?email=${user?.email}`
 
     const { data: orders = [], refetch } = useQuery({
         queryKey: ['order', user?.email],
@@ -24,7 +24,7 @@ const MyOrder = () => {
     const hendelDelete = (id) => {
         const proceeed = window.confirm(`Do you really want to delete this product?`);
         if (proceeed) {
-            fetch(`https://car-shops-server.vercel.app/order/${id}`, {
+            fetch(`https://car-shops-server-bd-arfat.vercel.app/order/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -37,9 +37,9 @@ const MyOrder = () => {
 
         }
     }
-
+// start myorder
     return (
-        <div className='mb-20'>
+        <div draggable='true' className='mb-20'>
             <h1 className='md:text-4xl text-2xl font-bold text-dark mt-16'>Everything you ordered is here</h1>
             <h1 className='text-dark mt-8 font-bold mg:text-3xl text-left md:text-center ms-3 md:ms-0'>You have added {orders.length} products</h1>
             <div className='mt-12'>
@@ -71,7 +71,7 @@ const MyOrder = () => {
                                     {/* <td className='text-[5px] font-bold md:text-[15px] text-dark'>{items.email}</td> */}
                                     <td className='text-[5px] font-bold md:text-[15px] text-dark'>{items.price}$</td>
                                     <td className=''><button onClick={() => hendelDelete(items._id)} className='btn text-[5px] text-dark btn-sm btn-error md:text-[15px]'>Delete</button></td>
-                                    <td><Link to={`/payment/${items._id}`} className='btn text-[5px] text-dark btn-sm py-[5px] btn-success md:text-[15px]'>Payment</Link></td>
+                                    <td><h4 className='text-success font-bold md:text-lg'>Paid</h4></td>
                                 </tr>)
                             }
                         </tbody>

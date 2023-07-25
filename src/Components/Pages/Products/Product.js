@@ -5,33 +5,33 @@ import { AuthContext } from '../../Context/AuthContextProvider';
 
 const Product = ({ items }) => {
 
-    const {name, _id, price, model, image} = items;
-    const {user} = useContext(AuthContext);
-    const navigate = useNavigate()
+    // const {name, _id, price, model, image} = items;
+    // const {user} = useContext(AuthContext);
+    // const navigate = useNavigate()
 
-    const data = {
-        servicId : _id,
-        name : name,
-        price : price,
-        model : model,
-        image : image,
-        email : user?.email
-    }
+    // const data = {
+    //     servicId : _id,
+    //     name : name,
+    //     price : price,
+    //     model : model,
+    //     image : image,
+    //     email : user?.email
+    // }
 
-    const handleadd = () => {
-        fetch("https://car-shops-server.vercel.app/orders", {
-            method: "POST", // or 'PUT'
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-        })
-        .then(res => res.json())
-        .then(data => {
-            toast.success('successfull your Order');
-            navigate('/order')
-        })
-    }
+    // const handleadd = () => {
+    //     fetch("https://car-shops-server-bd-arfat.vercel.app/orders", {
+    //         method: "POST", // or 'PUT'
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify(data),
+    //     })
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         toast.success('successfull your Order');
+    //         navigate('/order')
+    //     })
+    // }
 
     return (
         // start product
@@ -41,7 +41,7 @@ const Product = ({ items }) => {
                 <h2 className="text-center text-lg font-bold">{items.name}</h2>
                 <p>Price : {items.price}</p>
                 <p>Model : {items.model}</p>
-                <button onClick={handleadd} className='w-full btn-sm btn btn-info mt-2'>Order now</button>
+                <Link to={`/products/${items._id}`} className='w-full btn-sm btn btn-info mt-2'>Order now</Link>
             </div>
         </div>
         // end product
