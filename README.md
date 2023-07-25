@@ -10,7 +10,7 @@
 3) Authenticated User can Add products
 4) He/she can edit and delete products
 5) He/she can make a Product
-6) He/she can change product status and delete from Wishlist
+6) He/she can change product status and delete from Your Products
 7) This full stack site may be a mini e-commerce site.
 
 <h2>Technology used:</h2>
