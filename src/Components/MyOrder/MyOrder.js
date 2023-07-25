@@ -20,7 +20,7 @@ const MyOrder = () => {
             return data;
         }
     });
-
+// delete
     const hendelDelete = (id) => {
         const proceeed = window.confirm(`Do you really want to delete this product?`);
         if (proceeed) {
