@@ -32,7 +32,7 @@ const UpdateForm = () => {
             email: email,
         };
         // console.log(data)
-        fetch(`https://car-shops-server.vercel.app/products/${storeProduct._id}`, {
+        fetch(`https://car-shops-server-bd-arfat.vercel.app/products/${storeProduct._id}`, {
             method: "PUT", // or 'PUT'
             headers: {
                 "Content-Type": "application/json",

@@ -12,14 +12,12 @@ const Register = () => {
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
-        const image = form.image.value;
         const password = form.password.value;
 
         const data = {
             name,
             email,
             password,
-            image
         }
 
         createUser(email, password)
@@ -28,7 +26,7 @@ const Register = () => {
                 console.log(user)
                 
                 form.reset();
-                fetch("https://car-shops-server.vercel.app/users", {
+                fetch("https://car-shops-server-bd-arfat.vercel.app/users", {
                     method: "POST", // or 'PUT'
                     headers: {
                         "Content-Type": "application/json",
@@ -90,22 +88,6 @@ const Register = () => {
                                     type="email"
                                     name='email'
                                     className="block w-full mt-1  rounded-md shadow-sm border p-4 border-black"
-                                />
-                            </div>
-                        </div>
-                        <div className="mt-4">
-                            <label
-                                htmlFor="password"
-                                className="block text-sm font-medium text-gray-700 text-left "
-                            >
-                                Image url
-                            </label>
-                            <div className="flex flex-col items-start">
-                                <input
-                                    required
-                                    type="url"
-                                    name="image"
-                                    className="block w-full mt-1 border border-black rounded-md p-4"
                                 />
                             </div>
                         </div>

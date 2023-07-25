@@ -26,7 +26,7 @@ const Form = () => {
             email:email,
         };
         console.log(data)
-        fetch("https://car-shops-server.vercel.app/products", {
+        fetch("https://car-shops-server-bd-arfat.vercel.app/products", {
             method: "POST", // or 'PUT'
             headers: {
                 "Content-Type": "application/json",
