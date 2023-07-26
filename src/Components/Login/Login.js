@@ -23,7 +23,7 @@ const Login = () => {
             naveigate('/')
         })
         .catch(error => {
-            toast.error(error.massage)
+            toast.error(error.message)
         })
     }
 
