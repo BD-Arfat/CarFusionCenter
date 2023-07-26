@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCI2jMsv5Ko3Yfwd_eGsqbcOZJMShEuhH4",
-  authDomain: "car-shops-3.firebaseapp.com",
-  projectId: "car-shops-3",
-  storageBucket: "car-shops-3.appspot.com",
-  messagingSenderId: "737035225341",
-  appId: "1:737035225341:web:26e0dd52182c0dba705694"
+  apiKey: "AIzaSyDPUX3352BEaDTkSpE8spzcLhDM7VpnC_0",
+  authDomain: "car-shops-3-6011c.firebaseapp.com",
+  projectId: "car-shops-3-6011c",
+  storageBucket: "car-shops-3-6011c.appspot.com",
+  messagingSenderId: "509916898508",
+  appId: "1:509916898508:web:2ccaa5ad8d1b76b3ed0e69"
 };
 
 // Initialize Firebase
