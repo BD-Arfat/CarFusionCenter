@@ -41,7 +41,7 @@ const Register = () => {
                 })
             })
             .catch(error => {
-                toast.error(error.massage)
+                toast.error(error.message)
                 console.error(error)
             })
     }
