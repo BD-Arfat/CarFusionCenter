@@ -8,6 +8,7 @@ const Form = () => {
     const navigate = useNavigate();
     const {user} = useContext(AuthContext)
 
+    // Add Database 
     const handleSubmit = (e) =>{
         e.preventDefault();
         const form = e.target;
@@ -42,6 +43,7 @@ const Form = () => {
     }
 
     return (
+        // start Form
         <div>
             <form onSubmit={handleSubmit} class="w-11/12 mx-auto">
                 <div class="flex flex-wrap -mx-3 mb-6">
@@ -107,6 +109,7 @@ const Form = () => {
 
             </form>
         </div>
+// end Add Form
     );
 };
 
