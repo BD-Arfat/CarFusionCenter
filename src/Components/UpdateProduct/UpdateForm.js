@@ -48,15 +48,18 @@ const UpdateForm = () => {
     }
 
     return (
+        // start Form
         <div>
             <form onSubmit={handleSubmit} class="w-11/12 mx-auto">
                 <div class="flex flex-wrap -mx-3 mb-6">
+        // Products Name
                     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-left text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                             Products Name
                         </label>
                         <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" name='productName' defaultValue={storeProduct.name} placeholder="name" required />
                     </div>
+        // Products Price
                     <div class="w-full md:w-1/2 px-3">
                         <label class="block uppercase tracking-wide text-left text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
                             Products Price
@@ -66,12 +69,14 @@ const UpdateForm = () => {
                 </div>
 
                 <div class="flex flex-wrap -mx-3 mb-6">
+        // Products Model
                     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-left text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                             Products Model
                         </label>
                         <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="number" name='productModel' placeholder="model" defaultValue={storeProduct.model} required />
                     </div>
+        // Products Image Url
                     <div class="w-full md:w-1/2 px-3">
                         <label class="block uppercase tracking-wide text-left text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
                             Product Image Url
@@ -81,6 +86,7 @@ const UpdateForm = () => {
                 </div>
 
                 <div class="flex flex-wrap -mx-3 mb-6">
+        // Products Tags
                     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-left text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                             Products Tags please
@@ -92,6 +98,7 @@ const UpdateForm = () => {
                             <option>bike</option>
                         </select>
                     </div>
+        // Your Emil
                     <div class="w-full md:w-1/2 px-3">
                         <label class="block uppercase tracking-wide text-left text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
                             Your Email
@@ -113,6 +120,7 @@ const UpdateForm = () => {
 
             </form>
         </div>
+// end form
     );
 };
 
