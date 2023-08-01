@@ -47,6 +47,7 @@ const MyOrder = () => {
                     <table className="table table-zebra">
                         {/* head */}
                         <thead>
+        // start table Headers
                             <tr>
                                 {/* <th></th> */}
                                 <th className='md:font-bold text-[5px] text-dark md:text-lg'>Image</th>
