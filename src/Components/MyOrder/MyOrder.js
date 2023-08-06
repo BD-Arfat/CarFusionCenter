@@ -6,6 +6,7 @@ import { toast } from 'react-hot-toast';
 
 const MyOrder = () => {
 
+    // user email
     const { user } = useContext(AuthContext)
 
     const url = `https://car-shops-server-bd-arfat.vercel.app/order?email=${user?.email}`
