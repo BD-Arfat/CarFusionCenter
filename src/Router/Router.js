@@ -15,6 +15,7 @@ import OrderSuccess from "../Components/OrderSuccess/OrderSuccess";
 import OrderError from "../Components/OrderError/OrderError";
 
 export const router = createBrowserRouter([
+    // our maine path
     {
         path : '/',
         element : <Maine/>,
